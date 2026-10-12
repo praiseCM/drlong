@@ -1,0 +1,10 @@
+pics/
+cm/
+.work/
+dist/
+node_modules/
+*.tar.gz
+*.zip
+.sites-runtime/
+.sites-checkout/
+

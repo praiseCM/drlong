@@ -1,0 +1,30 @@
+/* Category-specific photographs; native proportions remain visible in a stable frame. */
+.photo-rotator{min-width:0;width:100%;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:var(--surface);align-self:start}
+.photo-slides{position:relative}
+.photo-slide[hidden],.photo-controls[hidden]{display:none!important}
+.photo-rotator .photo-slide{display:block;width:100%;margin:0;padding:0;border:0;border-radius:0;background:var(--surface);text-align:left;overflow:hidden;transform:none;box-shadow:none}
+.photo-rotator .photo-slide:hover{transform:none;box-shadow:none}
+.personal-home .photo-rotator .photo-slide img,.personal-home .photo-rotator .photo-slide:hover img,.fgcu-cm .photo-rotator .cm-photo img{display:block;width:100%;height:auto;aspect-ratio:var(--photo-ratio,1.6);object-fit:contain;object-position:center;min-height:0;max-height:none;transform:none;background:var(--surface-soft)}
+.photo-rotator .photo-slide figcaption,.photo-rotator .photo-slide>.cm-photo-caption{position:static;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:13px 16px;min-height:81px;border-top:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:14px;line-height:1.6}
+.photo-caption-copy{display:block;min-width:0}
+.photo-caption-copy strong{display:block;font-size:14px;line-height:1.6;font-weight:600}
+.photo-caption-copy small{display:block;font-size:12px;line-height:1.7;color:var(--muted);margin-top:3px;text-wrap:pretty}
+.photo-slide>.cm-photo-caption>.icon{width:18px;height:18px;flex-shrink:0;color:var(--accent);margin-top:2px}
+.photo-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:51px;padding:4px 10px;border-top:1px solid var(--line);background:var(--surface)}
+.photo-step-controls{display:flex;align-items:center;gap:3px}
+.photo-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:8px;background:transparent;border-radius:7px;color:var(--accent);font-size:12px;line-height:1.5;transition:background .2s}
+.photo-controls button:hover{background:var(--accent-soft)}
+.photo-controls button:disabled{color:var(--muted);cursor:default;opacity:.7}
+.photo-controls .icon{width:17px;height:17px}
+[data-photo-previous] .icon{transform:rotate(180deg)}
+[data-photo-counter]{font-size:12px;line-height:1.6;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.photo-enter img{animation:photo-arrive .35s ease both}
+.personal-home .about-photo-set{--photo-ratio:1.7;box-shadow:var(--shadow)}
+.personal-home .moments-grid>.photo-rotator{--photo-ratio:1.55}
+.fgcu-cm .cm-photo-set{--photo-ratio:1.6}
+.fgcu-cm .cm-methods-set{--photo-ratio:1.35}
+@keyframes photo-arrive{from{opacity:.35}to{opacity:1}}
+@media(max-width:540px){.photo-rotator .photo-slide figcaption,.photo-rotator .photo-slide>.cm-photo-caption{padding:12px 14px}.photo-controls{padding-inline:8px}.photo-caption-copy small{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.photo-enter img{animation:none}.photo-controls button{transition:none}}
+[data-motion=paused] .photo-enter img{animation:none}
+@media print{.photo-controls{display:none!important}.photo-rotator{break-inside:avoid;box-shadow:none}.photo-rotator .photo-slide img{animation:none}}

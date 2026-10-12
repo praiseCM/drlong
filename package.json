@@ -1,0 +1,14 @@
+{
+  "name": "dr-long-personal-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "check": "node scripts/check.mjs",
+    "check:http": "node scripts/check-http.mjs",
+    "package": "node scripts/package.mjs"
+  }
+}
